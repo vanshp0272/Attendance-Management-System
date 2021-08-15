@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | Sign up</title>
+</head>
+<body>
+    <header>
+        <h1>Create your Account</h1>
+    </header>
+    <main>
+        <form action = "Login.html">
+            <p>Fields with * must be filled</p>
+            <p>Name: * <input type="text" name = "fullname" required></p>
+            <p>Batch: * <input type="text" name = "batch" required></p>
+            <p>Enrollment No: * <input type="number" name="rollno" id="rollno" required></p>
+            <p>Branch: * <input type="text" name="branch" id="branch" required></p>
+            <p>Password: * <input type="password" name="password" id="password" required></p>
+            <input type="submit" value="Sign Up" onClick="storeData()">
+            <input type="submit" value="Login" onClick="window.location.href = 'Login.html'">
+        </form>
+    </main>
+    <script>
+        function storeData() {
+            var inputName = document.getElementById("fullname");
+            var inputBatch = document.getElementById("batch");
+            var inputEnrollment = document.getElementById("rollno");
+            var inputBranch = document.getElementById("branch");
+            var inputPassword = document.getElementById("password");
+            localStorage.setItem("fullname", inputName.value);
+            localStorage.setItem("batch", inputBatch.value);
+            localStorage.setItem("rollno", inputEnrollment.value);
+            localStorage.setItem("branch", inputBranch.value);
+            localStorage.setItem("password", inputPassword.value);
+        }
+      </script>
+</body>
+</html>

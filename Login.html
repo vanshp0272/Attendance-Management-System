@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | Login</title>
+</head>
+<body>
+    <header>
+        <h1>Login to your Account</h1>
+    </header>
+    <main>
+        <form action = " ">
+            <p>Enter your Enrollment No: <input type="number" name="rollno" id="rollno" required></p>
+            <p>Enter your Password: <input type="password" name="password" id="password" required></p>
+            <input type="submit" value="Login" onClick="window.location.href = 'Dashboard.html'">
+            <input type="submit" value="Sign Up" onClick="window.location.href = 'Sign Up.html'">
+        </form>
+    </main>
+    <script>
+        function verifyUser() {
+            var inputEnrollment = document.getElementById("rollno");
+            var inputPassword = document.getElementById("password");
+            var userEnrollment = localStorage.getItem("rollno");
+            var userPassword = localStorage.getItem("password");
+
+            console.log(userEnrollment);
+            if (inputEnrollment == userEnrollment && inputPassword == userPassword) {
+                window.location.href = "Dashboard.html"
+            } else if (inputEnrollment == userEnrollment && inputPassword != userPassword) {
+                alert("Incorrect Password!");
+            } else {
+                alert("Please register yourself before Login."); 
+            }
+        }
+      </script>
+</body>
+</html>
